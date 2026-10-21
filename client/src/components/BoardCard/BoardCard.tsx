@@ -16,6 +16,9 @@ export function BoardCard({ id, title, isDone }: BoardCardProps) {
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: ["cards"] });
     },
+    onError: () => {
+      alert("Не удалось удалить карточку");
+    },
   });
 
   const handleDelete = () => {
@@ -27,7 +30,11 @@ export function BoardCard({ id, title, isDone }: BoardCardProps) {
   return (
     <div className={isDone ? styles.isDone : styles.card}>
       {title}
-      <button className={styles.deleteBtn} onClick={handleDelete}>×</button>
+      <button
+        className={styles.deleteBtn}
+        onClick={handleDelete}
+        disabled={deleteMutation.isPending}
+      >×</button>
     </div>
   );
 }
