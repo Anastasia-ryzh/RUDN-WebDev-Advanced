@@ -1,10 +1,10 @@
 ## 1. API-функция deleteCard
 
-- [ ] 1.1 Добавить функцию `deleteCard(id)` в `client/src/api/cards.ts`: отправляет `DELETE /api/cards/:id`, выбрасывает ошибку, если `response.ok === false` — **сделал — убедился**: открыл DevTools → Console, запустил json-server, выполнил `fetch('/api/cards/9999', {method: 'DELETE'})` и увидел статус `404` (данные не пострадают)
+- [x] 1.1 Добавить функцию `deleteCard(id)` в `client/src/api/cards.ts`: отправляет `DELETE /api/cards/:id`, выбрасывает ошибку, если `response.ok === false` — **сделал — убедился**: открыл DevTools → Console, запустил json-server, выполнил `fetch('/api/cards/9999', {method: 'DELETE'})` и увидел статус `404` (данные не пострадают)
 
 ## 2. Передача id и key в BoardColumn / BoardCard
 
-- [ ] 2.1 `BoardColumn` передаёт `card.id` в `BoardCard` и задаёт `key={card.id}` при рендере списка — **сделал — убедился**: красное предупреждение про key в консоли браузера исчезло, доска выглядит как прежде
+- [x] 2.1 `BoardColumn` передаёт `card.id` в `BoardCard` и задаёт `key={card.id}` при рендере списка — **сделал — убедился**: красное предупреждение про key в консоли браузера исчезло, доска выглядит как прежде
 
 ## 3. Кнопка удаления в BoardCard с window.confirm и мутацией
 
