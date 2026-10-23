@@ -56,6 +56,11 @@ app.use((req, res) => {
   res.status(404).json({ error: "Not found" });
 });
 
+app.use((err: Error, req: express.Request, res: express.Response, next: express.NextFunction) => {
+  console.error(err);
+  res.status(500).json({ error: "Внутренняя ошибка сервера" });
+});
+
 app.listen(3001, () => {
   console.log("Сервер запущен: http://localhost:3001");
 });
