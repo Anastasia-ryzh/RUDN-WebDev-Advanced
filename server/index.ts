@@ -52,6 +52,10 @@ app.delete("/cards/:id", (req, res) => {
   res.status(204).end();
 });
 
+app.use((req, res) => {
+  res.status(404).json({ error: "Not found" });
+});
+
 app.listen(3001, () => {
   console.log("Сервер запущен: http://localhost:3001");
 });
